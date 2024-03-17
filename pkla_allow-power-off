@@ -1,0 +1,8 @@
+sudo bash -c "cat >/etc/polkit-1/localauthority/50-local.d/41-allow-power-off.pkla" <<EOF
+[Allow Power-Off All Users]
+Identity=unix-user:*
+Action=org.freedesktop.login1.power-off
+ResultAny=yes
+ResultInactive=auth_admin_keep
+ResultActive=yes
+EOF
